@@ -1,0 +1,3 @@
+ratings.parquet
+*.npy
+.ipynb_checkpoints/
