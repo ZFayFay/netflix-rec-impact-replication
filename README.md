@@ -25,7 +25,7 @@ How much viewing do recommendations *cause*? Comparing "recommended vs not recom
 | choice model, assumption broken | **7.0×** |
 
 - **The dashboard number is 2.4× too high.** The choice model fixes most of it.
-- **The leftover gap (+10%) comes from the taste model, not the estimator.** Given true tastes, the same likelihood recovers the bonus.
+- **The leftover gap (+10%) comes from the taste model, not the estimator.** Given true tastes, the same likelihood lands close to the true bonus (1.02 vs 1.10).
 - **Validation:** predicted vs experimental diversion ratios correlate at 0.77 (Netflix: 0.86). Against the noise-free truth they correlate at 0.99. The gap is experiment noise.
 - **Counterfactuals:** the model gets the ranking right, with random worst and matrix factorization best. But **all three 90% bootstrap intervals miss the truth**, and popularity flips sign. Bootstrap covers sampling noise, not model bias.
 - **Break the identification assumption** with one hidden signal the recommender uses, and the model gives the naive answer (7.0×) with more confidence.

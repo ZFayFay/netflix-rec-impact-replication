@@ -36,7 +36,7 @@ That turns "does the method work?" into a question I can actually answer.
 
 ## What didn't
 
-**1. The leftover 10% hides in the taste model.** I gave the same method the *true* tastes, and it recovered the true bonus. The bias comes from rebuilding taste from viewing history. My first, simpler history encoder was off by 24%. A better one, by 11%. So the assumption can hold perfectly in the world and you still get bias, if your model can't see everything the recommender saw.
+**1. The leftover 10% hides in the taste model.** I gave the same method the *true* tastes, and it landed close to the true bonus (1.02 vs 1.10). The bias comes from rebuilding taste from viewing history. My first, simpler history encoder was off by 24%. A better one, by 11%. So the assumption can hold perfectly in the world and you still get bias, if your model can't see everything the recommender saw.
 
 **2. The error bars lied.** Netflix reports no uncertainty. So I added the standard thing: refit on 10 bootstrap samples, report a 90% interval. All three intervals missed the truth. The model got the ranking right: random is worst, matrix factorization best. But it flipped the sign on popularity (+0.8% predicted, −0.4% true). Bootstrap measures sampling noise. It doesn't measure model bias. A tight interval around a biased estimate looks rigorous and still misleads.
 
