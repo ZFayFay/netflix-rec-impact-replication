@@ -1,54 +1,72 @@
 # Your dashboard says recommendations multiply viewing by 7.5×. The truth is 3.1×.
 
-*Netflix published a method to measure how much viewing recommendations actually cause. I rebuilt it on MovieLens, in a world where I know the true answer. Then I tried to break it. Code on [GitHub](https://github.com/ZFayFay/netflix-rec-impact-replication).*
+## I rebuilt Netflix's method for measuring what recommendations cause. Then I tried to break it.
 
----
+*Part 3 of **Netflix Tech Blog, rebuilt**. [Part 1: artwork personalization](https://medium.com/@faycal.zouine.usa/i-rebuilt-netflixs-artwork-personalization-system-on-movielens-here-s-what-actually-matters-d0540b7c43eb) · [Part 2: the billboard bandit](https://medium.com/@faycal.zouine.usa/i-rebuilt-netflixs-billboard-bandit-the-metric-picked-the-winner-686296a3b72f)*
 
-## The question every recommender team gets asked
+*6-minute read. In a hurry? Read the bold lines.*
 
-"How much do recommendations drive?"
+Every recommender team gets asked the same question: what are recommendations worth?
 
-The easy answer is a dashboard. Compare the watch rate of titles when they were recommended vs when they weren't. In my rebuild that says recommendations multiply viewing by **7.5×**.
+And every team has the same answer ready. A dashboard. Compare viewing when a title was recommended vs when it wasn't. Done.
 
-The true number is **3.1×**.
+In my rebuild, that dashboard says recommendations multiply viewing by **7.5×**.
 
-The gap is selection. The recommender shows you titles you were likely to watch anyway. So the "recommended" group was always going to watch more. Anyone who's done marketing attribution has seen this movie. Last-touch gives the credit to the channel that showed up for people already converting.
+The truth is **3.1×**.
 
-## Netflix's answer
+That's not a rounding error. That's a team taking credit for viewing that would have happened anyway (selection bias). The recommender shows you what you already like. Of course the "recommended" group watches more.
 
-Netflix ([post](https://netflixtechblog.com/measuring-the-impact-of-personalized-recommendations-4c26be3a4d96), [paper](https://arxiv.org/abs/2511.07280)) models the choice itself. Each day each member picks one title, or nothing. A title's appeal is your taste for it plus a **bonus** if it's recommended today. The bonus is what recommendations cause.
+> Recommended is not the same as caused.
 
-The key assumption: the recommender explores at random. So once you account for what it knew about you, *which* titles got shown is as good as a coin flip. That randomness is what separates "shown because you'd like it" from "watched because it was shown".
+I've spent 8 years in marketing measurement, where the question is always some version of "what did this cause?" So when Netflix published [how they answer it](https://netflixtechblog.com/measuring-the-impact-of-personalized-recommendations-4c26be3a4d96), I rebuilt it.
 
-They validate it with a small A/B test that nudges recommendations away from some titles. Then they check if the model predicts where the lost viewing goes. Then they ask: what if we swapped our recommender for random, popularity, or plain matrix factorization? Their answer: −16%, −12%, −4%.
+## Netflix's answer, in plain words
 
-## Why rebuild it in a simulation?
+They model the choice itself. Each day, each member picks one title, or nothing. A title's appeal is your taste for it, plus a **bonus** if it's recommended today. That bonus is what recommendations cause.
 
-Because I can't see Netflix's data. And because in a simulation I know the truth. I built the world from 890k real MovieLens ratings: real tastes, real popularity, real genres, real viewing histories. Then I simulated 40 days of recommendations and viewing for 4,000 members, with every assumption written down.
+The key assumption: the recommender adds a bit of randomness to what it shows. So once you account for what it knew about you, *which* titles got shown is close to a coin flip. That randomness is what separates "shown because you'd like it" from "watched because it was shown."
 
-That turns "does the method work?" into a question I can actually answer.
+They check the model with a small A/B test that nudges recommendations away from some titles, and see if the model predicts where that viewing goes. Then they ask: what if we swapped our recommender for random, popularity, or plain matrix factorization? Their answer: −16%, −12%, −4%.
+
+## Why a simulation
+
+I can't see Netflix's data. And in a simulation, I know the truth.
+
+I built the world from 890k real MovieLens ratings: real tastes, real popularity, real genres, real viewing histories. Then I simulated 40 days of recommendations and viewing for 4,000 members, with every assumption written down.
+
+**That turns "does the method work?" into a question I can actually answer.**
 
 ## What held up
 
-**The model fixes most of the bias.** Naive: 7.5×. Model: 3.4×. Truth: 3.1×.
+**The model fixes most of the gap.** Dashboard: 7.5×. Model: 3.4×. Truth: 3.1×.
 
-**The validation idea works.** I simulated the nudge experiment for 8 genres. The model's predicted diversion ratios match the experiment at 0.77 correlation (Netflix: 0.86), and the noise-free truth at 0.99. About a quarter of the viewing a genre lost went to "watch nothing". The rest moved to other titles.
+![Naive vs model](https://raw.githubusercontent.com/ZFayFay/netflix-rec-impact-replication/main/figures/fig1_naive_vs_model.png)
+
+**The A/B check works, if the test is big enough.** I simulated Netflix's nudge test on 8 genres. The model's predictions matched the test at 0.77 correlation (Netflix got 0.86), and matched the noise-free truth at 0.99. The gap is test noise, not the model. About a quarter of the viewing a genre lost went to "watch nothing." The rest moved to other titles.
 
 ## What didn't
 
-**1. The leftover 10% hides in the taste model.** I gave the same method the *true* tastes, and it landed close to the true bonus (1.02 vs 1.10). The bias comes from rebuilding taste from viewing history. My first, simpler history encoder was off by 24%. A better one, by 11%. So the assumption can hold perfectly in the world and you still get bias, if your model can't see everything the recommender saw.
+**1. The leftover 10% hides in the taste model.** I gave the same method the *true* tastes, and it landed close to the true bonus (1.02 vs 1.10). So the bias comes from rebuilding taste out of viewing history. My first, simpler version was off by 24%. A better one, by 11%.
 
-**2. The error bars lied.** Netflix reports no uncertainty. So I added the standard thing: refit on 10 bootstrap samples, report a 90% interval. All three intervals missed the truth. The model got the ranking right: random is worst, matrix factorization best. But it flipped the sign on popularity (+0.8% predicted, −0.4% true). Bootstrap measures sampling noise. It doesn't measure model bias. A tight interval around a biased estimate looks rigorous and still misleads.
+**The assumption can hold perfectly and you still get bias, if your model can't see what the recommender saw.**
 
-**3. Break the assumption and it's back to the dashboard.** I added one hidden signal: the recommender knows something about you that the model doesn't (think: a search you just did). The model's answer went from 3.4× to **7.0×**. That's almost the naive number, now with a fancy model behind it.
+**2. The error bars lied.** Netflix reports no uncertainty. So I added the standard thing: refit on 10 resamples of members (bootstrap) and report a 90% range. All three ranges missed the truth.
 
-## What I'd take away
+![Counterfactuals](https://raw.githubusercontent.com/ZFayFay/netflix-rec-impact-replication/main/figures/fig3_counterfactuals.png)
+
+The ranking was right: random is worst, matrix factorization best. But popularity flipped sign (+0.8% predicted, −0.4% true). Bootstrap measures sampling noise. It says nothing about a biased model.
+
+**A tight range around a wrong answer looks rigorous. It's still wrong.**
+
+**3. Break the assumption and you're back to the dashboard.** I added one hidden signal: the recommender knows something about you that the model doesn't. Think of a search you just did. The model's answer jumped from 3.4× to **7.0×**. Almost the dashboard number, now with a fancy model behind it.
+
+## What to remember
 
 1. **Never report "recommended vs not" as impact.** It's selection plus effect.
-2. **The method is only as good as what your model sees.** List every signal the recommender uses. If your model doesn't have one, your estimate is biased up.
-3. **Validate with a nudge experiment.** It's the only check that touches reality.
-4. **A bootstrap interval is not a confidence interval on the truth.** Say so when you show one.
+2. **List every signal the recommender uses.** If your model is missing one, your estimate is too high.
+3. **Validate with a nudge test.** It's the only check that touches reality.
+4. **A bootstrap range is not a range on the truth.** Say so when you show one.
 
 ---
 
-*Notebook and code: [github.com/ZFayFay/netflix-rec-impact-replication](https://github.com/ZFayFay/netflix-rec-impact-replication). The method belongs to the Netflix authors (Zielnicki, Aridor, Bibaut, Tran, Chou, Kallus). This is an independent educational rebuild.*
+*Notebook and code: [github.com/ZFayFay/netflix-rec-impact-replication](https://github.com/ZFayFay/netflix-rec-impact-replication). The method belongs to the Netflix authors (Zielnicki, Aridor, Bibaut, Tran, Chou, Kallus). This is an independent rebuild of their [post](https://netflixtechblog.com/measuring-the-impact-of-personalized-recommendations-4c26be3a4d96) and [paper](https://arxiv.org/abs/2511.07280).*
