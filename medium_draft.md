@@ -1,6 +1,6 @@
 # Your dashboard says recommendations multiply viewing by 7.5×. The truth is 3.1×.
 
-## I rebuilt Netflix's method for measuring what recommendations cause. Then I tried to break it.
+## I rebuilt Netflix's method in a simulation where I know the true answer. Then I tried to break it.
 
 *Part 3 of **Netflix Tech Blog, rebuilt**. [Part 1: artwork personalization](https://medium.com/@faycal.zouine.usa/i-rebuilt-netflixs-artwork-personalization-system-on-movielens-here-s-what-actually-matters-d0540b7c43eb) · [Part 2: the billboard bandit](https://medium.com/@faycal.zouine.usa/i-rebuilt-netflixs-billboard-bandit-the-metric-picked-the-winner-686296a3b72f)*
 
