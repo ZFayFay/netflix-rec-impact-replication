@@ -1,0 +1,49 @@
+{
+ "seed": 44,
+ "naive_ratio": 7.446948031828379,
+ "true_mean_exp_beta": 3.089670222669206,
+ "true_mean_beta": 1.0811247993407453,
+ "daily_engagement": 0.2848,
+ "model_mean_beta": 1.2362326383590698,
+ "model_mean_exp_beta": 3.4835269451141357,
+ "beta_error_pct": 14.346894929512954,
+ "truth_prob": {
+  "expected_naive_ratio": 7.459908634776233,
+  "ATT_ratio": 3.064625429537469,
+  "selection_ratio": 2.434199156241461,
+  "engagement": 0.28371774143983264,
+  "engagement_lift_vs_no_recs_pct": 12.395673137319463
+ },
+ "model_prob": {
+  "expected_naive_ratio": 7.259992599487305,
+  "ATT_ratio": 3.546186923980713,
+  "selection_ratio": 2.047267198562622,
+  "engagement": 0.2939307391643524,
+  "engagement_lift_vs_no_recs_pct": 12.682509422302246
+ },
+ "truth_cf": {
+  "current": 0.0,
+  "random": -0.05960333458997025,
+  "popularity": 0.0028602367751742186,
+  "matrix factorization": 0.014091520799735191
+ },
+ "model_cf": {
+  "current": 0.0,
+  "random": -0.0542072057723999,
+  "popularity": 0.011559724807739258,
+  "matrix factorization": 0.03130137920379639
+ },
+ "notebook_oracle_output": "rec bonus with TRUE taste given: 0.994  (true 1.081, our model 1.236)",
+ "stress_0.8": {
+  "naive_ratio_in_that_world": 12.08118841519342,
+  "model_mean_beta": 1.9323447942733765,
+  "model_mean_exp_beta": 7.028796195983887,
+  "truth": {
+   "expected_naive_ratio": 12.20177694972897,
+   "ATT_ratio": 3.0133627541728147,
+   "selection_ratio": 4.049222727277794,
+   "engagement": 0.35384703196637485,
+   "engagement_lift_vs_no_recs_pct": 17.20976110186747
+  }
+ }
+}

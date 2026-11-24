@@ -1,0 +1,89 @@
+{
+ "true_mean_exp_beta": 3.1122419100174468,
+ "true_mean_beta": 1.0960393406963498,
+ "sd_3xaffinity": 0.7639407650436213,
+ "sigma_0.8": {
+  "naive_ratio_in_that_world": 12.314494866788275,
+  "daily_engagement": 0.3556625,
+  "truth": {
+   "expected_naive_ratio": 12.294239250697354,
+   "ATT_ratio": 3.009880053153425,
+   "selection_ratio": 4.084627637508939,
+   "engagement": 0.353519152924395,
+   "engagement_lift_vs_no_recs_pct": 17.30848080255423
+  },
+  "model_mean_beta": 1.9364306926727295,
+  "model_mean_exp_beta": 7.039716720581055,
+  "model": {
+   "expected_naive_ratio": 12.002130508422852,
+   "ATT_ratio": 6.848355293273926,
+   "selection_ratio": 1.752556562423706,
+   "engagement": 0.35838454961776733,
+   "engagement_lift_vs_no_recs_pct": 22.995067596435547
+  },
+  "hidden_share_of_member_title_taste_variance": 0.5230443994614453
+ },
+ "sigma_0.4": {
+  "naive_ratio_in_that_world": 8.62828671945331,
+  "daily_engagement": 0.30295625,
+  "truth": {
+   "expected_naive_ratio": 8.723833928275376,
+   "ATT_ratio": 3.0514157182967256,
+   "selection_ratio": 2.8589463821550165,
+   "engagement": 0.301045186719298,
+   "engagement_lift_vs_no_recs_pct": 13.915946310659422
+  },
+  "model_mean_beta": 1.4324138164520264,
+  "model_mean_exp_beta": 4.24169397354126,
+  "model": {
+   "expected_naive_ratio": 8.387871742248535,
+   "ATT_ratio": 4.2582807540893555,
+   "selection_ratio": 1.9697788953781128,
+   "engagement": 0.30685001611709595,
+   "engagement_lift_vs_no_recs_pct": 15.376890182495117
+  },
+  "hidden_share_of_member_title_taste_variance": 0.21516785663196616
+ },
+ "sigma_0.2": {
+  "naive_ratio_in_that_world": 7.798767414379268,
+  "daily_engagement": 0.28955625,
+  "truth": {
+   "expected_naive_ratio": 7.8343236635654225,
+   "ATT_ratio": 3.063860438164654,
+   "selection_ratio": 2.5570106150978673,
+   "engagement": 0.28773614953888416,
+   "engagement_lift_vs_no_recs_pct": 12.884627541000304
+  },
+  "model_mean_beta": 1.3075593709945679,
+  "model_mean_exp_beta": 3.733825206756592,
+  "model": {
+   "expected_naive_ratio": 7.632699012756348,
+   "ATT_ratio": 3.738067388534546,
+   "selection_ratio": 2.041883707046509,
+   "engagement": 0.29542630910873413,
+   "engagement_lift_vs_no_recs_pct": 13.577901840209961
+  },
+  "hidden_share_of_member_title_taste_variance": 0.06414311689259683
+ },
+ "sigma_0.1": {
+  "naive_ratio_in_that_world": 7.573080410458212,
+  "daily_engagement": 0.2862,
+  "truth": {
+   "expected_naive_ratio": 7.6015892137683565,
+   "ATT_ratio": 3.0655540138993205,
+   "selection_ratio": 2.479678772353221,
+   "engagement": 0.28432404268830874,
+   "engagement_lift_vs_no_recs_pct": 12.595662707303855
+  },
+  "model_mean_beta": 1.2489089965820312,
+  "model_mean_exp_beta": 3.5250399112701416,
+  "model": {
+   "expected_naive_ratio": 7.2716851234436035,
+   "ATT_ratio": 3.532769203186035,
+   "selection_ratio": 2.0583527088165283,
+   "engagement": 0.29185929894447327,
+   "engagement_lift_vs_no_recs_pct": 12.721240997314453
+  },
+  "hidden_share_of_member_title_taste_variance": 0.01684620531046877
+ }
+}

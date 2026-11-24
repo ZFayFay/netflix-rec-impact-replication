@@ -1,0 +1,12 @@
+{
+ "I": 16000,
+ "true_mean_beta": 1.1095137387781016,
+ "model_mean_beta": 1.1720125675201416,
+ "beta_error_pct": 5.632992774913226,
+ "true_mean_exp_beta": 3.186151818699413,
+ "model_mean_exp_beta": 3.3152666091918945,
+ "corr_beta": 0.8894496067178669,
+ "daily_engagement": 0.28534375,
+ "epochs": 30,
+ "note": "same code, same 30 epochs, 4x members"
+}

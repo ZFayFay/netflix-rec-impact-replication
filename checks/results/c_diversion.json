@@ -1,0 +1,111 @@
+{
+ "placebo_no_personalization_beta0": 1.747022344333236,
+ "placebo_multiplier_exp_beta0": 5.737492936835307,
+ "seed500": {
+  "5": {
+   "n_pairs": 64,
+   "model_vs_experiment": 0.08930972874523967,
+   "model_vs_truth": 0.9902974636285881,
+   "placebo_vs_experiment": -0.06357191878451882,
+   "placebo_vs_truth": 0.931170249450939,
+   "truth_vs_experiment": 0.18020723125738003,
+   "excl_nothing_model_vs_truth": 0.9956954482244188,
+   "excl_nothing_placebo_vs_truth": 0.9763394656933212,
+   "excl_nothing_model_vs_experiment": 0.33896576834500386,
+   "demeaned_by_destination_model_vs_truth": 0.9956463612126198,
+   "demeaned_by_destination_placebo_vs_truth": 0.9676109272990563,
+   "share_to_nothing_experiment": 0.7445847603493927,
+   "share_to_nothing_truth": 0.16269441421842534,
+   "share_to_nothing_model": 0.13226485535537075,
+   "share_to_nothing_placebo": 0.06534854548420728,
+   "share_to_nothing_experiment_min_max": [
+    0.3630952380952379,
+    1.5157894736842106
+   ]
+  },
+  "10": {
+   "n_pairs": 64,
+   "model_vs_experiment": 0.629721985223245,
+   "model_vs_truth": 0.9902543025391136,
+   "placebo_vs_experiment": 0.5821286696046415,
+   "placebo_vs_truth": 0.9375758551849362,
+   "truth_vs_experiment": 0.6653324724970687,
+   "excl_nothing_model_vs_truth": 0.9958682025105218,
+   "excl_nothing_placebo_vs_truth": 0.9796426824197196,
+   "excl_nothing_model_vs_experiment": 0.6557033994954663,
+   "demeaned_by_destination_model_vs_truth": 0.9955532374957637,
+   "demeaned_by_destination_placebo_vs_truth": 0.9676234355849359,
+   "share_to_nothing_experiment": 0.20194917144301794,
+   "share_to_nothing_truth": 0.1557507784216956,
+   "share_to_nothing_model": 0.12362948565282883,
+   "share_to_nothing_placebo": 0.06114964730204402,
+   "share_to_nothing_experiment_min_max": [
+    0.012690355329964743,
+    0.3729128014842303
+   ]
+  },
+  "25": {
+   "n_pairs": 64,
+   "model_vs_experiment": 0.5420432614867319,
+   "model_vs_truth": 0.9920454951909374,
+   "placebo_vs_experiment": 0.44651703534406995,
+   "placebo_vs_truth": 0.9433704110604284,
+   "truth_vs_experiment": 0.6021612748498563,
+   "excl_nothing_model_vs_truth": 0.9964782957894038,
+   "excl_nothing_placebo_vs_truth": 0.9797728956139559,
+   "excl_nothing_model_vs_experiment": 0.7325394885958567,
+   "demeaned_by_destination_model_vs_truth": 0.9960560757723097,
+   "demeaned_by_destination_placebo_vs_truth": 0.9676233199170893,
+   "share_to_nothing_experiment": 0.34791938094554,
+   "share_to_nothing_truth": 0.14879418235122002,
+   "share_to_nothing_model": 0.12069449074612662,
+   "share_to_nothing_placebo": 0.060861319758473476,
+   "share_to_nothing_experiment_min_max": [
+    0.12575301204819386,
+    0.5394495412844234
+   ]
+  },
+  "50": {
+   "n_pairs": 64,
+   "model_vs_experiment": 0.33434771904463767,
+   "model_vs_truth": 0.9932451280156669,
+   "placebo_vs_experiment": 0.19156009925682024,
+   "placebo_vs_truth": 0.9464325060592081,
+   "truth_vs_experiment": 0.40658948797569894,
+   "excl_nothing_model_vs_truth": 0.9970171472641682,
+   "excl_nothing_placebo_vs_truth": 0.9806512644461645,
+   "excl_nothing_model_vs_experiment": 0.7253998377007339,
+   "demeaned_by_destination_model_vs_truth": 0.996290730074798,
+   "demeaned_by_destination_placebo_vs_truth": 0.9677397795639303,
+   "share_to_nothing_experiment": 0.45932130893996304,
+   "share_to_nothing_truth": 0.14402115251479353,
+   "share_to_nothing_model": 0.11823091116532702,
+   "share_to_nothing_placebo": 0.05878124444835383,
+   "share_to_nothing_experiment_min_max": [
+    0.17167962149376062,
+    0.7829698857736727
+   ]
+  },
+  "100": {
+   "n_pairs": 64,
+   "model_vs_experiment": 0.7701424267208457,
+   "model_vs_truth": 0.9934510363671382,
+   "placebo_vs_experiment": 0.6803988916148508,
+   "placebo_vs_truth": 0.9465474912850619,
+   "truth_vs_experiment": 0.8121657130745024,
+   "excl_nothing_model_vs_truth": 0.9969311505851151,
+   "excl_nothing_placebo_vs_truth": 0.9797969445268411,
+   "excl_nothing_model_vs_experiment": 0.8714741134449212,
+   "demeaned_by_destination_model_vs_truth": 0.9965186615212518,
+   "demeaned_by_destination_placebo_vs_truth": 0.968448116456639,
+   "share_to_nothing_experiment": 0.2649429792983999,
+   "share_to_nothing_truth": 0.14285926454457554,
+   "share_to_nothing_model": 0.11780546191081985,
+   "share_to_nothing_placebo": 0.058583133542279446,
+   "share_to_nothing_experiment_min_max": [
+    0.05679801206958644,
+    0.4220277920741088
+   ]
+  }
+ }
+}

@@ -1,0 +1,72 @@
+{
+ "seed": 42,
+ "naive_ratio_notebook": 7.470047937160394,
+ "rate_rec": 0.006185,
+ "rate_not": 0.0008279732676456048,
+ "true_mean_beta": 1.0960393406963498,
+ "true_exp_of_mean_beta": 2.992291077665557,
+ "true_mean_exp_beta": 3.1122419100174468,
+ "true_sd_beta": 0.2773044658624842,
+ "model_mean_beta": 1.218462347984314,
+ "model_exp_of_mean_beta": 3.3819832801818848,
+ "model_mean_exp_beta": 3.4187116622924805,
+ "model_sd_beta": 0.14526446163654327,
+ "corr_beta": 0.6642696329549561,
+ "slope_betahat_on_beta": 0.34797409444450855,
+ "truth_prob_scale": {
+  "expected_naive_ratio": 7.5368730509782536,
+  "ATT_ratio_recommended_cells": 3.0673094696716423,
+  "selection_ratio": 2.457160950174708,
+  "ATU_ratio_not_recommended_cells": 3.0968394994503545,
+  "ATE_ratio_all_cells_pooled": 3.094360413442947,
+  "paper_style_ATEj_over_Y0_weighted_mean": 2.0868998979335385,
+  "paper_style_ATEj_over_Y0_mean": 2.1016543133585373,
+  "paper_style_ATEj_over_Y0_median": 2.0239309409921757,
+  "engagement_current": 0.28340671414966806,
+  "engagement_no_recs_at_all": 0.25188417678644476,
+  "engagement_lift_current_vs_no_recs_pct": 12.514695351407102
+ },
+ "model_prob_scale": {
+  "expected_naive_ratio": 7.179046630859375,
+  "ATT_ratio_recommended_cells": 3.4589693546295166,
+  "selection_ratio": 2.0754871368408203,
+  "ATU_ratio_not_recommended_cells": 3.4284443855285645,
+  "ATE_ratio_all_cells_pooled": 3.4306375980377197,
+  "paper_style_ATEj_over_Y0_weighted_mean": 2.4329540494376154,
+  "paper_style_ATEj_over_Y0_mean": 2.40422502898114,
+  "paper_style_ATEj_over_Y0_median": 2.3415510284092464,
+  "engagement_current": 0.28710421919822693,
+  "engagement_no_recs_at_all": 0.2551863491535187,
+  "engagement_lift_current_vs_no_recs_pct": 12.50767707824707
+ },
+ "true_impression_weighted_mean_beta": 1.0946455106878357,
+ "model_impression_weighted_mean_beta": 1.2247520657441766,
+ "true_impression_weighted_mean_exp_beta": 3.0999099178983145,
+ "model_impression_weighted_mean_exp_beta": 3.4504714799040554,
+ "impressions_per_title_min_median_max": [
+  1657.0,
+  4225.5,
+  14876.0
+ ],
+ "n_watch_events": 45415,
+ "share_of_viewing_from_recommended_titles": 0.21790157436970164,
+ "recommended_watch_events_per_title_min_median_max": [
+  1,
+  18.0,
+  186
+ ],
+ "n_titles_with_zero_recommended_watches": 0,
+ "n_titles_with_lt5_recommended_watches": 31,
+ "max_abs_diff_TASTE_rebuilt_from_HIST_only": 6.467049118441537e-15,
+ "HIST_equals_M_rows": true,
+ "sd_3xaffinity_all_cells": 0.7639407650436214,
+ "sd_3xaffinity_within_title_across_members": 0.7601510133821479,
+ "sd_0.6xpop_across_titles": 0.6,
+ "sd_rec_noise": 0.5,
+ "sd_V_TRUE_within_member_across_titles": 0.8639469447227429,
+ "history_len_min_median_max": [
+  3,
+  12.0,
+  120
+ ]
+}

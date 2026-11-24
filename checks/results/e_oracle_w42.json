@@ -1,0 +1,38 @@
+{
+ "seed": 42,
+ "true": {
+  "mean": 1.0960393406963498,
+  "impression_weighted_mean": 1.0946455106878357,
+  "mean_over_titles_ge20_recommended_watches": 1.1323801515988592,
+  "sd": 0.2773044658624842,
+  "mean_exp": 3.1122419100174468
+ },
+ "n_titles_ge20_recommended_watches": 143,
+ "recommended_watches_per_title_quartiles": [
+  1.0,
+  9.0,
+  18.0,
+  47.25,
+  186.0
+ ],
+ "common_scalar_beta_MLE": 1.1221079389433384,
+ "common_scalar_beta_se": 0.010417993975620378,
+ "per_title_with_notebook_L2_shrinkage": {
+  "mean": 1.1073350081829478,
+  "impression_weighted_mean": 1.1051056824935244,
+  "mean_over_titles_ge20_recommended_watches": 1.1361850529255186,
+  "min": 0.5562947534123238,
+  "sd": 0.1569882017684601,
+  "mean_exp": 3.064695489631328,
+  "corr_with_true": 0.7258528464431097
+ },
+ "per_title_unpenalized_MLE": {
+  "mean": 1.0260211486422153,
+  "impression_weighted_mean": 1.0553126638198291,
+  "mean_over_titles_ge20_recommended_watches": 1.1486275795790304,
+  "min": -0.9055027572989676,
+  "sd": 0.45388717028248793,
+  "mean_exp": 3.0496436326049103,
+  "corr_with_true": 0.6179371414739414
+ }
+}
